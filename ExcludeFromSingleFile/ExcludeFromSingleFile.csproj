@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<Authors>おのでら (ソーサリーフォース)</Authors>
+		<Company>ソーサリーフォース (https://sorceryforce.net/)</Company>
+		<Copyright>Copyright (C) 2020 おのでら (ソーサリーフォース)</Copyright>
+		<Description>単一実行ファイルとして発行すると通常全てのファイルが実行ファイルの中に含められますが、一部のファイルを実行ファイルの外に発行するための手順について説明しています。</Description>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<None Update="TextFile1.txt">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<!-- ここから追加 -->
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<!-- ここまで追加 -->
+		</None>
+	</ItemGroup>
+
+</Project>
